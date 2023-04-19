@@ -1,9 +1,9 @@
+// vars/checkout.groovy
 def call(Map configMap) {
-  def url = configMap['url']
-  def branch = configMap['branch']
-  checkout([
-    $class: 'GitSCM',
-    branches: [[name: "*/${branch}"]],
-    userRemoteConfigs: [[url: "${url}"]]
-  ])
+    def scm = configMap['scm']
+    checkout([
+        $class: 'GitSCM',
+        branches: scm.branches,
+        userRemoteConfigs: scm.userRemoteConfigs,
+    ])
 }

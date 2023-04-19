@@ -1,6 +1,12 @@
 @Library('mpl') _
 
-checkout.call(String url, String branch) {
-    url: 'https://github.com/naiveskill/devops.git'
-    branch: 'main'
-}
+def variables = load "checkout.groovy"
+
+def scm = [
+    $class: 'GitSCM',
+    userRemoteConfigs: [[url: 'https://github.com/naiveskill/devops.git']],
+    branches: [[name: "*/${main}"]]
+]
+
+load "checkout.groovy"
+checkout.call(scm)
