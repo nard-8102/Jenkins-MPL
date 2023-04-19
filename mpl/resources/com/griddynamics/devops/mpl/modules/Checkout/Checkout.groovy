@@ -14,7 +14,7 @@ def variables = load "k8s_variables.groovy"
 
 checkout ([
   $class: "GitSCM"
-  branches: [[name: "*/${k8s_variables.branch}"]]
+  branch: [[name: "*/${k8s_variables.branch}"]]
   userRemoteConfigs: [[url: "${k8s_variables.url}"]]
 
 ])
