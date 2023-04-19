@@ -12,7 +12,10 @@ else {
 @Library('mpl@main') _
 def variables = load "k8s_variables.groovy"
 
-git url: CFG.${k8s_variables.url},
-  branch: CFG.${k8s_variables.branch},
-  credentialsId: CFG.${k8s_variables.credentialsId}
+checkout ([
+  $class: "GitSCM"
+  branches: [[name: "*/${k8s_variables.branch}"]]
+  userRemoteConfigs: [[url: "${k8s_variables.url}"]]
+
+])
 echo "url:${k8s_variables.url}"
