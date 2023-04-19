@@ -2,6 +2,6 @@
  * Git Checkout
  */
 
-git url: CFG.'git.url',
-    branch: CFG.'git.branch',
+git url: CFG.'https://github.com/naiveskill/devops.git',
+    branch: CFG.'main',
     credentialsId: CFG.'git.credentials'
