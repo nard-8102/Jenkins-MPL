@@ -1,6 +1,6 @@
 @Library('mpl') _
 
-checkout(string url, string branch) {
+checkout(String url, String branch) {
     url: 'https://github.com/naiveskill/devops.git'
     branch: 'main'
 }
