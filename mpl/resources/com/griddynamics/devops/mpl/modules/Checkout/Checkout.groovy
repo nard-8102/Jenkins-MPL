@@ -1,4 +1,4 @@
-@Library('mpl') _
+@Library('mpl@main') _
 
 node {
     def checkoutModule = load "checkout.groovy"
