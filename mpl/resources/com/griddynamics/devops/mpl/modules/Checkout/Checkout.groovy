@@ -9,4 +9,3 @@ def scm = [
 ]
 
 load "checkout.groovy"
-checkout.call(scm)
