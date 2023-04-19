@@ -1,6 +1,6 @@
 def call(Map configMap) {
   def scmVars = [:]
-  def scm = configMap['scm']
+  //def scm = configMap['scm']
   scmVars.url = k8s_variables.url
   scmVars.branch = k8s_variables.branch
 
