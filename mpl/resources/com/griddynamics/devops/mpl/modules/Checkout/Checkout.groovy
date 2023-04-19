@@ -1,5 +1,3 @@
-import org.jenkinsci.plugins.workflow.steps.scm.GitStep
-
 class Checkout {
   static def execute(configMap) {
     def gitUrl = configMap['https://github.com/naiveskill/devops.git']
