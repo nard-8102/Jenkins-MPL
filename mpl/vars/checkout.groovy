@@ -1,8 +1,8 @@
 def call(Map configMap) {
   def scmVars = [:]
   def scm = configMap['scm']
-  scmVars.url = scm.url
-  scmVars.branch = scm.branch
+  scmVars.url = k8s_variables.url
+  scmVars.branch = k8s_variables.branch
 
   // Define the checkout step with the specified Git URL and branch
   checkout([$class: 'GitSCM', 
