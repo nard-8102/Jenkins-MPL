@@ -1,11 +1,6 @@
 @Library('mpl') _
 
-def variables = load "checkout.groovy"
-
-def scm = [
-    $class: 'GitSCM',
-    userRemoteConfigs: [[url: 'https://github.com/naiveskill/devops.git']],
-    branches: [[name: "*/${main}"]]
-]
-
-load "checkout.groovy"
+node {
+    def checkoutModule = load "checkout.groovy"
+    checkoutModule.call(url: 'https://github.com/naiveskill/devops.git', branch: 'main')
+}
