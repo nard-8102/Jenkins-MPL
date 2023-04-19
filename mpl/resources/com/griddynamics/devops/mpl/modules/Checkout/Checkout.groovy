@@ -1,6 +1,8 @@
-@Library('mpl@main') _
+/**
+ * Common checkout module
+ */
 
-node {
-    def checkoutModule = load "checkout.groovy"
-    checkoutModule.call(url: 'https://github.com/naiveskill/devops.git', branch: 'main')
-}
+if( CFG.'git.url' )
+  MPLModule('Git Checkout', CFG)
+else
+  MPLModule('Default Checkout', CFG)
