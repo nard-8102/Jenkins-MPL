@@ -10,6 +10,6 @@ else {
 }
 */
 
-git url: CFG.'https://github.com/naiveskill/devops.git',
-    branch: CFG.'main',
-    credentialsId: CFG.'git.credentials'
+git url: CFG.${k8s_variables.url},
+    branch: CFG.${k8s_variables.branch},
+    credentialsId: CFG.${k8s_variables.credentialsId}
