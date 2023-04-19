@@ -9,6 +9,8 @@ else {
   MPLModule('Default Checkout', CFG)
 }
 */
+@Library('mpl@main') _
+def variables = load "k8s_variables.groovy"
 
 git url: CFG.${k8s_variables.url},
   branch: CFG.${k8s_variables.branch},
