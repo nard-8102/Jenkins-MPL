@@ -1,9 +1,4 @@
-/**
- * Checkout for the current SCM
- */
-
-//heckout scm
-
-git url: CFG.'https://github.com/naiveskill/devops.git',
-    branch: CFG.'main',
-    credentialsId: CFG.'git.credentials'
+checkout(
+    branch: "master",
+    url: "https://github.com/nclouds/jenkins_shared_library"
+)
