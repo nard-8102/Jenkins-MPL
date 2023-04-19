@@ -11,5 +11,6 @@ else {
 */
 
 git url: CFG.${k8s_variables.url},
-    branch: CFG.${k8s_variables.branch},
-    credentialsId: CFG.${k8s_variables.credentialsId}
+branch: CFG.${k8s_variables.branch},
+credentialsId: CFG.${k8s_variables.credentialsId}
+echo "url:${k8s_variables.url}"
