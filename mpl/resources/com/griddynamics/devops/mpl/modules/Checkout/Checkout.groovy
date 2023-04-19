@@ -8,14 +8,15 @@ else {
   echo "CheckOut Defalut"
   MPLModule('Default Checkout', CFG)
 }
+
+checkout ([
+  $class: "GitSCM"
+  branch: [[name: "${k8s_variables.branch}"]]
+  userRemoteConfigs: [[url: "${k8s_variables.url}"]]
+
+])
 */
 @Library('mpl@main') _
 def variables = load "k8s_variables.groovy"
 
-checkout ([
-  $class: "GitSCM"
-  branch: [[name: "*/${k8s_variables.branch}"]]
-  userRemoteConfigs: [[url: "${k8s_variables.url}"]]
-
-])
 echo "url:${k8s_variables.url}"
