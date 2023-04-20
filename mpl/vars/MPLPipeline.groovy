@@ -41,10 +41,9 @@ def call(body) {
   pipeline {
     agent any
     environment {
-      def variables = k8s_environment()
-      variables.each { k, v ->
-        env["MY_ENV_VAR_${k}".replaceAll(/[^a-zA-Z0-9_]/, '_')] = "${v}"
-      }
+      def k8sEnv = load 'k8s_environment.groovy'
+      branch = k8sEnv.branch
+      url = k8sEnv.url
     }
     options {
       skipDefaultCheckout(true)
