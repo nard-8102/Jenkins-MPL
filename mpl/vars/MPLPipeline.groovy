@@ -27,6 +27,7 @@
  *
  * @author Sergei Parshev <sparshev@griddynamics.com>
  */
+@library('mpl@main') _
 def call(body) {
   def MPL = MPLPipelineConfig(body, [
     agent_label: '',
@@ -41,8 +42,9 @@ def call(body) {
   pipeline {
     agent any
     environment {
-      branch = "main"
-      url = "https://github.com/naiveskill/devops.git"
+        def k8s_env = readTrusted(env: false, file: 'vars/k8s_environment.groovy')
+        BRANCH = k8s_env.MY_VAR_1
+        URL = k8s_env.MY_VAR_2
     }
     options {
       skipDefaultCheckout(true)
