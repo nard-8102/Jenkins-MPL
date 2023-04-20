@@ -3,7 +3,7 @@
 
 checkout scm
 */
-@Library('mpl@main') _
+@Library('mpl@main')
 
 def branch = 'main'
 def url = 'https://github.com/naiveskill/devops.git'
