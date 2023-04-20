@@ -17,7 +17,7 @@ node {
 def branch = 'main'
 def url = 'https://github.com/naiveskill/devops.git'
 
-scmcheckout(String url, String branch)
+scmcheckout.call(String url, String branch)
 
 echo "branch: ${branch}"
 echo "branch: ${url}"
