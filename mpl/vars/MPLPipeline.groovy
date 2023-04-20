@@ -41,11 +41,9 @@ def call(body) {
   pipeline {
     agent any
     environment {
-        script {
-            def k8sEnv = load 'k8s_environment.groovy'
-            branch = "'${k8sEnv.branch}'"
-            url = "'${k8sEnv.url}'"
-        }
+        def k8sEnv = load 'k8s_environment.groovy'
+        BRANCH = "'${k8sEnv.branch}'"
+        URL = "'${k8sEnv.url}'"
     }
     options {
       skipDefaultCheckout(true)
