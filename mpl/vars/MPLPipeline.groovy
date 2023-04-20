@@ -41,9 +41,8 @@ def call(body) {
   pipeline {
     agent any
     environment {
-        def k8sEnv = load 'k8s_environment.groovy'
-        BRANCH = "'${k8sEnv.branch}'"
-        URL url = new URL("${k8sEnv.url}")
+      branch : "main",
+      url : "https://github.com/naiveskill/devops.git"
     }
     options {
       skipDefaultCheckout(true)
