@@ -13,12 +13,7 @@ node {
     checkoutModule.call(url: url, branch: branch)
 }
 */
-
-def branch = 'main'
-def url = 'https://github.com/naiveskill/devops.git'
-
-def checkout = load "scmcheckout.groovy"
-// checkout.scmcheckout(url, branch)
+checkout()
 
 echo "branch: ${branch}"
 echo "branch: ${url}"
