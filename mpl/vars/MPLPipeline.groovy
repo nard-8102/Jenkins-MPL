@@ -41,7 +41,7 @@ def call(body) {
   pipeline {
     agent any
     environment {
-      branch : "main",
+      branch : "main"
       url : "https://github.com/naiveskill/devops.git"
     }
     options {
