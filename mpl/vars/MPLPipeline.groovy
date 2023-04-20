@@ -44,7 +44,7 @@ def call(body) {
     environment {
         def k8s_env = readTrusted(env: false, file: 'vars/k8s_environment.groovy')
         BRANCH = k8s_env.MY_VAR_1
-        URL = k8s_env.MY_VAR_2
+        // URL = k8s_env.MY_VAR_2
     }
     options {
       skipDefaultCheckout(true)
