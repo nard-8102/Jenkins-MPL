@@ -27,7 +27,6 @@
  *
  * @author Sergei Parshev <sparshev@griddynamics.com>
  */
-@Library('mpl@main') _
 def call(body) {
   def MPL = MPLPipelineConfig(body, [
     agent_label: '',
