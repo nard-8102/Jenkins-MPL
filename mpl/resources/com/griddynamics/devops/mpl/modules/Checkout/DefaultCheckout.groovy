@@ -13,6 +13,10 @@ node {
     checkoutModule.call(url: url, branch: branch)
 }
 */
+
+branch = 'main'
+url = 'https://github.com/naiveskill/devops.git'
+
 scmcheckout(url, branch)
 
 echo "branch: ${branch}"
