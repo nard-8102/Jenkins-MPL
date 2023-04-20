@@ -8,6 +8,6 @@ def branch = 'main'
 def url = 'https://github.com/naiveskill/devops.git'
 
 node {
-    def checkoutModule = load "checkout.groovy"
+    def checkoutModule = load "scmcheckout.groovy"
     checkoutModule.call(url: url, branch: branch)
 }
