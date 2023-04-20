@@ -41,7 +41,10 @@ def call(body) {
   pipeline {
     agent any
     environment{
-      k8s_enviroment()
+      def variables = k8s_enviroment()
+      variables.each { k, v ->
+        "${k}=${v}"
+      }      
     }
     options {
       skipDefaultCheckout(true)
