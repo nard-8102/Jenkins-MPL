@@ -43,7 +43,7 @@ def call(body) {
     environment {
       def variables = k8s_environment()
       variables.each { k, v ->
-        env[MY_ENV_VAR_${k}] = "${v}"
+        env["MY_ENV_VAR_${k}".replaceAll(/[^a-zA-Z0-9_]/, '_')] = "${v}"
       }
     }
     options {
