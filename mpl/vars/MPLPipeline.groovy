@@ -43,7 +43,7 @@ def call(body) {
     environment {
         def k8sEnv = load 'k8s_environment.groovy'
         BRANCH = "'${k8sEnv.branch}'"
-        URL = "'${k8sEnv.url}'"
+        URL = "new URL('${k8sEnv.url}')"
     }
     options {
       skipDefaultCheckout(true)
