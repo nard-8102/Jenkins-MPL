@@ -40,7 +40,7 @@ def call(body) {
 
   pipeline {
     agent any
-    enviroment{
+    environment{
       k8s_enviroment()
     }
     options {
