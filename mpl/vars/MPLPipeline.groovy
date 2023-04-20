@@ -43,8 +43,8 @@ def call(body) {
     environment {
       def variables = k8s_environment()
       variables.each { k, v ->
-        env."${k}" = v
-      }
+        env."$k" = "$v"
+      }      
     }
     options {
       skipDefaultCheckout(true)
