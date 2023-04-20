@@ -24,3 +24,5 @@ def call(String url, String branch) {
         userRemoteConfigs: [[url: "${url}"]]
     ])
 }
+echo "branch: ${branch}"
+echo "branch: ${url}"
