@@ -43,7 +43,7 @@ def call(body) {
     environment{
       def variables = k8s_enviroment()
       variables.each { k, v ->
-        "${k}=${v}"
+        "_${k}" "${v}"
       }      
     }
     options {
