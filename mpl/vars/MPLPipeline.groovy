@@ -41,9 +41,9 @@ def call(body) {
   pipeline {
     agent any
     environment{
-      def variables = k8s_enviroment()
+      def variables = k8s_environment()
       variables.each { k, v ->
-        "${k}" = "${v}"
+        env."${k}" = "${v}"
       }      
     }
     options {
