@@ -40,6 +40,9 @@ def call(body) {
 
   pipeline {
     agent any
+    enviroment{
+      k8s_enviroment()
+    }
     options {
       skipDefaultCheckout(true)
     }
