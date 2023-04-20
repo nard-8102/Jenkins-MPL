@@ -13,7 +13,10 @@ node {
     checkoutModule.call(url: url, branch: branch)
 }
 */
-checkout()
+def branch = 'main'
+def url = 'https://github.com/naiveskill/devops.git'
+
+checkout(url, branch)
 
 echo "branch: ${branch}"
 echo "branch: ${url}"
